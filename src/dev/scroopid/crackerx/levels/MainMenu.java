@@ -16,7 +16,7 @@ public class MainMenu extends Level{
 		UILayer layerone = new UILayer();
 		Button test = new Button(GraphicsUtil.makeTextButtonImage("test", Graphics.defaultButton,
 				Graphics.purple_text, new intPoint(6, 6), true), 
-				new floatPoint(200, 200), 1){
+				new floatPoint(200, 200), 0){
 			@Override
 			public void whenPressed(CrafexTouchEvent touch) {
 				if(getLocation().getX() == 200){
@@ -27,6 +27,7 @@ public class MainMenu extends Level{
 			}
 			
 		};
+		layerone.addUIObject(test);
 		addLayer(layerone);
 	}
 	
