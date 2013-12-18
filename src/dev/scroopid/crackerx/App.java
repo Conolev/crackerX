@@ -6,6 +6,7 @@ import dev.scroopid.crafexEngine.AppActivity;
 import dev.scroopid.crafexEngine.util.intPoint;
 import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.Menu;
 
 public class App extends AppActivity {
@@ -16,6 +17,7 @@ public class App extends AppActivity {
 		removeTitle();
 		setLandscape();
 		setFullScreen(true);
+		setDefaultColor(Color.WHITE);
 	}
 
 	@Override
