@@ -4,10 +4,7 @@ import dev.scroopid.crackerx.graphics.Graphics;
 import dev.scroopid.crackerx.levels.MainMenu;
 import dev.scroopid.crafexEngine.AppActivity;
 import dev.scroopid.crafexEngine.util.intPoint;
-import android.os.Bundle;
-import android.app.Activity;
 import android.graphics.Color;
-import android.view.Menu;
 
 public class App extends AppActivity {
 

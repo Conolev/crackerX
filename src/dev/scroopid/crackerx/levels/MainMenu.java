@@ -20,17 +20,27 @@ public class MainMenu extends Level{
 		Button test = new Button(GraphicsUtil.makeTextButtonImage("test", Graphics.defaultButton,
 				Graphics.purple_text, new intPoint(6, 6), true), 
 				new floatPoint(200, 200), 0){
+			
 			@Override
-			public void whenHeld(CrafexTouchEvent touch) {
-				intPoint temp = touch.getTouchLocation().clone().subtract(this.touch.getTouchLocation());
-				setTargetLocation(getTargetLocation().add(temp));
-				this.touch = touch;
+			public boolean isTouching(CrafexTouchEvent touch) {
+				if(this.touch != null)
+					return true;
+				return super.isTouching(touch);
 			}
 			
 			@Override
-					public boolean isActive() {
-						return true;
-					}
+			public void whenHeld(CrafexTouchEvent touch) {
+				if(this.touch != null && touch != null){
+					intPoint temp = touch.getTouchLocation().clone().subtract(this.touch.getTouchLocation().clone());
+					setTargetLocation(getTargetLocation().add(temp));
+					this.touch = touch;
+				}
+			}
+			
+			@Override
+			public boolean isActive() {
+				return true;
+			}
 			
 		};
 		test.setSpeed(10000000);
