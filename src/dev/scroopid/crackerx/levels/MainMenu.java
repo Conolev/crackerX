@@ -7,6 +7,7 @@ import dev.scroopid.crafexEngine.input.CrafexTouchEvent;
 import dev.scroopid.crafexEngine.level.Level;
 import dev.scroopid.crafexEngine.ui.UIButton;
 import dev.scroopid.crafexEngine.ui.UILayer;
+import dev.scroopid.crafexEngine.ui.UIObject;
 import dev.scroopid.crafexEngine.util.floatPoint;
 import dev.scroopid.crafexEngine.util.intPoint;
 import dev.scroopid.crafexEngine.util.intRectangle;
@@ -16,10 +17,11 @@ public class MainMenu extends Level{
 	public MainMenu(){
 		super();
 		UILayer layerone = new UILayer(new intRectangle(new intPoint(),
-				Crafex.WINDOW_DIMENTIONS.clone()));
+				Crafex.WINDOW_DIMENTIONS.clone(), 0));
 		UIButton test = new UIButton(GraphicsUtil.makeTextButtonImage("test", Graphics.defaultButton,
 				Graphics.purple_text, new intPoint(6, 6), true), 
-				new floatPoint(200, 200), 0){
+				new floatPoint(Crafex.WINDOW_DIMENTIONS.getX() / 2, 
+						Crafex.WINDOW_DIMENTIONS.getY() / 2), 15, 1.2f, 0){
 			
 			@Override
 			public boolean isTouching(CrafexTouchEvent touch) {
