@@ -8,6 +8,7 @@ import dev.scroopid.crafexEngine.level.Level;
 import dev.scroopid.crafexEngine.ui.UIButton;
 import dev.scroopid.crafexEngine.ui.UILayer;
 import dev.scroopid.crafexEngine.ui.UIObject;
+import dev.scroopid.crafexEngine.ui.Input.JoyStick;
 import dev.scroopid.crafexEngine.util.floatPoint;
 import dev.scroopid.crafexEngine.util.intPoint;
 import dev.scroopid.crafexEngine.util.intRectangle;
@@ -18,6 +19,8 @@ public class MainMenu extends Level{
 		super();
 		UILayer layerone = new UILayer(new intRectangle(new intPoint(),
 				Crafex.WINDOW_DIMENTIONS.clone(), 0));
+		
+		JoyStick stick = new JoyStick(Graphics.base, Graphics.stick, new floatPoint(500, 500), 0);
 		UIButton test = new UIButton(GraphicsUtil.makeTextButtonImage("test", Graphics.defaultButton,
 				Graphics.purple_text, new intPoint(6, 6), true), 
 				new floatPoint(Crafex.WINDOW_DIMENTIONS.getX() / 2, 
@@ -46,7 +49,8 @@ public class MainMenu extends Level{
 			
 		};
 		test.setSpeed(10000000);
-		layerone.addUIObject(test);
+		layerone.addUIObject(stick);
+//		layerone.addUIObject(test);
 		addLayer(layerone);
 	}
 	
