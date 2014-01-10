@@ -16,6 +16,7 @@ public class App extends AppActivity {
 		setLandscape();
 		setFullScreen(true);
 		setDefaultColor(Color.WHITE);
+		setFPS(60);
 	}
 
 	@Override

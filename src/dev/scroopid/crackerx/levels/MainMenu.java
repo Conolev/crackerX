@@ -1,14 +1,14 @@
 package dev.scroopid.crackerx.levels;
 
+import java.util.List;
+
 import dev.scroopid.crafexEngine.Crafex;
+import dev.scroopid.crafexEngine.entity.Entity;
 import dev.scroopid.crafexEngine.graphics.GraphicsUtil;
 import dev.scroopid.crafexEngine.input.CrafexTouchEvent;
-import dev.scroopid.crafexEngine.input.InputHandler;
 import dev.scroopid.crafexEngine.level.Level;
 import dev.scroopid.crafexEngine.ui.UIButton;
 import dev.scroopid.crafexEngine.ui.UILayer;
-import dev.scroopid.crafexEngine.ui.UIObject;
-import dev.scroopid.crafexEngine.ui.Input.JoyStick;
 import dev.scroopid.crafexEngine.util.Util;
 import dev.scroopid.crafexEngine.util.floatPoint;
 import dev.scroopid.crafexEngine.util.intPoint;
@@ -23,8 +23,9 @@ public class MainMenu extends Level{
 		
 		UIButton test = new UIButton(GraphicsUtil.makeTextButtonImage("play", 
 				Crafex.graphicsMan.getImageFromKey("button"),
-				Crafex.graphicsMan.getImageFromKey("text"), new intPoint(6, 6), true), 
-				new floatPoint(-150f, -150f), 0, 1.2f, 0){
+				Crafex.graphicsMan.getImageFromKey("text"), new intPoint(6, 6),
+				GraphicsUtil.STRECH_CUT), 
+				new floatPoint(-150f, -150f), 0, 1.2f){
 			
 			@Override
 			public void whenHeld(CrafexTouchEvent touch) {
@@ -48,6 +49,11 @@ public class MainMenu extends Level{
 	
 	public void play(){
 		Crafex.levelMan.setLevel(new Game());
+	}
+	
+	@Override
+	public List<Entity> getEntities() {
+		return null;
 	}
 	
 }
