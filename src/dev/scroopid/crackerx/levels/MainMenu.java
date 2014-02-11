@@ -4,6 +4,7 @@ import java.util.List;
 
 import dev.scroopid.crafexEngine.Crafex;
 import dev.scroopid.crafexEngine.entity.Entity;
+import dev.scroopid.crafexEngine.graphics.GraphicsManager;
 import dev.scroopid.crafexEngine.graphics.GraphicsUtil;
 import dev.scroopid.crafexEngine.input.CrafexTouchEvent;
 import dev.scroopid.crafexEngine.level.Level;
@@ -22,9 +23,9 @@ public class MainMenu extends Level{
 				Crafex.WINDOW_DIMENTIONS.clone(), 0));
 		
 		UIButton test = new UIButton(GraphicsUtil.makeTextButtonImage("play", 
-				Crafex.graphicsMan.getImageFromKey("button"),
-				Crafex.graphicsMan.getImageFromKey("text"), new intPoint(6, 6),
-				GraphicsUtil.STRECH_CUT), 
+				GraphicsManager.getImageFromKey("button"),
+				GraphicsManager.getImageFromKey("text"), new intPoint(12, 8),
+				GraphicsUtil.STRETCH_CUT), 
 				new floatPoint(-150f, -150f), 0, 1.2f){
 			
 			@Override
@@ -40,6 +41,7 @@ public class MainMenu extends Level{
 				super.whenReleased(touch);
 			}
 		};
+		
 		test.setTargetLocation(Crafex.WINDOW_DIMENTIONS.getX() / 2,
 				Crafex.WINDOW_DIMENTIONS.getY() / 2);
 		test.setSpeed((int) Util.pixelScale(75));
