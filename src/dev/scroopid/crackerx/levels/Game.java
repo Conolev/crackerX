@@ -94,5 +94,4 @@ public class Game extends Level{
 	public void update() {
 		super.update();
 	}
-	
 }
